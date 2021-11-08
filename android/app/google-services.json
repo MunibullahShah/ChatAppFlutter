@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "24514339128",
+    "firebase_url": "https://sage-wave-251008.firebaseio.com",
+    "project_id": "sage-wave-251008",
+    "storage_bucket": "sage-wave-251008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24514339128:android:7ad7a398cec8bee0fb61cd",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24514339128-mbahib96b8osumt2nn1pp53qk3iak5m3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCqbWOH2I1bUvUlSf6iuUmA5Mcr2bV81c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24514339128-mbahib96b8osumt2nn1pp53qk3iak5m3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
