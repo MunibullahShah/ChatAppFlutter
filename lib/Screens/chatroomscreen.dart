@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:chat_app/Screens/signup_screen.dart';
-import 'package:chat_app/services/auth.dart';
+import 'package:chat_app/Helper/Authentication.dart';
+import 'package:chat_app/Screens/searchScreen.dart';
+
+import 'package:chat_app/services/firebaseMethods.dart';
 import 'package:flutter/material.dart';
 
 class ChatroomScreen extends StatefulWidget {
@@ -27,7 +29,7 @@ class _ChatroomScreenState extends State<ChatroomScreen> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SignUp(),
+                    builder: (context) => Authenticate(),
                   ),
                 );
               },
@@ -37,6 +39,17 @@ class _ChatroomScreenState extends State<ChatroomScreen> {
               ),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Search_Screen(),
+              ),
+            );
+          },
+          child: Icon(Icons.search),
         ),
       ),
     );

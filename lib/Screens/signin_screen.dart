@@ -1,15 +1,18 @@
-import 'package:chat_app/Widgets/widget.dart';
-import 'package:chat_app/services/auth.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:chat_app/services/firebaseMethods.dart';
 import 'package:flutter/material.dart';
 
-class SingIn extends StatefulWidget {
-  const SingIn({Key? key}) : super(key: key);
+class SignIn extends StatefulWidget {
+  final Function toggle;
+
+  SignIn(this.toggle);
 
   @override
-  _SingInState createState() => _SingInState();
+  _SignInState createState() => _SignInState();
 }
 
-class _SingInState extends State<SingIn> {
+class _SignInState extends State<SignIn> {
   bool _isloading = false;
 
   AuthMethods authMethods = new AuthMethods();
@@ -62,6 +65,13 @@ class _SingInState extends State<SingIn> {
                         color: Colors.blue,
                         child: const Text("Sign In"),
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Register",
+                      style: TextStyle(fontSize: 17, color: Colors.grey),
                     ),
                   ],
                 ),

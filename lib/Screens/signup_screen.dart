@@ -2,12 +2,14 @@
 
 import 'package:chat_app/Screens/chatroomscreen.dart';
 import 'package:chat_app/Screens/signin_screen.dart';
-import 'package:chat_app/Widgets/widget.dart';
-import 'package:chat_app/services/auth.dart';
+
+import 'package:chat_app/services/firebaseMethods.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp();
+  final Function toggle;
+
+  SignUp(this.toggle);
 
   @override
   _SignUpState createState() => _SignUpState();
@@ -165,7 +167,8 @@ class _SignUpState extends State<SignUp> {
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute<dynamic>(
-                                builder: (BuildContext context) => SingIn(),
+                                builder: (BuildContext context) =>
+                                    SignIn(widget.toggle),
                               ),
                               (route) => false);
                         },

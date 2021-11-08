@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:chat_app/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
