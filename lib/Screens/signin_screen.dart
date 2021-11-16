@@ -1,10 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:chat_app/Screens/signup_screen.dart';
 import 'package:chat_app/services/firebaseMethods.dart';
 import 'package:flutter/material.dart';
 
+import 'chatroomscreen.dart';
+
 class SignIn extends StatefulWidget {
-  final Function toggle;
+  final toggle;
 
   SignIn(this.toggle);
 
@@ -69,9 +72,22 @@ class _SignInState extends State<SignIn> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "Register",
-                      style: TextStyle(fontSize: 17, color: Colors.grey),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                builder: (BuildContext context) =>
+                                    SignUp(widget.toggle),
+                              ),
+                              (route) => false);
+                        });
+                      },
+                      child: Text(
+                        "Register",
+                        style: TextStyle(fontSize: 17, color: Colors.grey),
+                      ),
                     ),
                   ],
                 ),
@@ -88,6 +104,9 @@ class _SignInState extends State<SignIn> {
       print("$value");
     });
     _isloading = false;
-    setState(() {});
+    setState(() {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => ChatroomScreen()));
+    });
   }
 }

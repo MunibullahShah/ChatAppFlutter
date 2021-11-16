@@ -2,12 +2,13 @@
 
 import 'package:chat_app/Screens/chatroomscreen.dart';
 import 'package:chat_app/Screens/signin_screen.dart';
+import 'package:chat_app/services/database.dart';
 
 import 'package:chat_app/services/firebaseMethods.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
-  final Function toggle;
+  final toggle;
 
   SignUp(this.toggle);
 
@@ -21,6 +22,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController usernameEditingController = new TextEditingController();
 
   AuthMethods authService = new AuthMethods();
+  DatabaseMethods databaseMethods = new DatabaseMethods();
 
   final formKey = GlobalKey<FormState>();
   bool isLoading = false;
@@ -41,6 +43,7 @@ class _SignUpState extends State<SignUp> {
             "userName": usernameEditingController.text,
             "userEmail": emailEditingController.text
           };
+          databaseMethods.uploadUserInfo(userDataMap);
           print("Signed Up and User: $userDataMap");
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => ChatroomScreen()));

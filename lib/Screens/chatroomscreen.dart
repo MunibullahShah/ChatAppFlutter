@@ -42,7 +42,7 @@ class _ChatroomScreenState extends State<ChatroomScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Search_Screen(),
